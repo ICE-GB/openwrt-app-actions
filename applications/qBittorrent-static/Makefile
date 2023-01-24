@@ -7,17 +7,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=qBittorrent-static
-PKG_VERSION:=4.4.5_v2.0.7
+PKG_VERSION:=4.5.0_v2.0.8
 PKG_RELEASE=1
 
 STRIP:=true
 
 ifeq ($(ARCH),x86_64)
 	PKG_ARCH:=x86_64
-endif
-
-ifeq ($(ARCH),arm64)
-	PKG_ARCH:=aarch64
 endif
 
 ifeq ($(ARCH),aarch64)
@@ -35,12 +31,12 @@ define Package/qBittorrent-static
   CATEGORY:=Network
   DEPENDS:=@(arm||aarch64||x86_64)
   SUBMENU:=BitTorrent
-  TITLE:=bittorrent client programmed in C++ / Qt
+  TITLE:=bittorrent client programmed in C++ / Qt6
   URL:=https://www.qbittorrent.org/
 endef
 
 define Package/qBittorrent-static/description
-  qBittorrent is a bittorrent client programmed in C++ / Qt that uses
+  qBittorrent is a bittorrent client programmed in C++ / Qt6 that uses
   libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.
   It aims to be a good alternative to all other bittorrent clients out
   there. qBittorrent is fast, stable and provides unicode support as
@@ -49,7 +45,7 @@ endef
 
 define Download/qbittorrent
   URL:=https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-$(PKG_VERSION)
-  URL_FILE:=$(PKG_ARCH)-qbittorrent-nox
+  URL_FILE:=$(PKG_ARCH)-cmake-icu-qbittorrent-nox
   FILE:=qbittorrent-nox
   HASH:=skip
 endef
