@@ -45,7 +45,7 @@ endef
 
 define Download/qbittorrent
   URL:=https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-$(PKG_VERSION)
-  URL_FILE:=$(PKG_ARCH)-cmake-icu-qbittorrent-nox
+  URL_FILE:=$(PKG_ARCH)-qbittorrent-nox
   FILE:=qbittorrent-nox
   HASH:=skip
 endef
